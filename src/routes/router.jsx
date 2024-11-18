@@ -10,6 +10,7 @@ import UpdateProfile from "../components/UpdateProfile";
 import PrivateRoute from "./PrivateRoute";
 import DynamicTitle from "../components/DynamicTitle";
 import ForgetPassword from "../components/ForgetPassword";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -96,7 +97,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <div>Page not found</div>,
+    element: <ErrorPage></ErrorPage>
   },
 ]);
 
