@@ -11,6 +11,7 @@ import Home from "../pages/Home";
 import AdventureDetails from "../components/AdventureDetails";
 import Profile from "../components/Profile";
 import UpdateProfile from "../components/UpdateProfile";
+import PrivateRoute from "./PrivateRoute";
 // import HomeLayout from "../layouts/HomeLayout";
 // import CategoryNews from "../pages/CategoryNews";
 // import AuthLayout from "../layouts/AuthLayout";
@@ -40,7 +41,7 @@ import UpdateProfile from "../components/UpdateProfile";
         },
         {
           path: "/adventure/:id",
-          element: <AdventureDetails></AdventureDetails>,
+          element: <PrivateRoute><AdventureDetails></AdventureDetails></PrivateRoute>,
           loader:async({params})=>{
             const res =await fetch("/adventure.json")
             const data = await res.json()
@@ -50,11 +51,11 @@ import UpdateProfile from "../components/UpdateProfile";
         },
         {
           path: "/Profile",
-          element: <Profile />
+          element: <PrivateRoute><Profile /></PrivateRoute>
       },
       {
           path: "/updateProfile",
-          element: <UpdateProfile />   
+          element: <PrivateRoute><UpdateProfile /> </PrivateRoute>  
 
       },
       ],

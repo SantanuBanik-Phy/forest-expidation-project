@@ -13,7 +13,7 @@ const Profile = () => {
             <div className="card bg-base-100 shadow-xl">
                 <div className="card-body">
                     <div className="avatar">
-                        <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                        <div className="w-24 rounded-full ring ring-green-500 ring-offset-base-100 ring-offset-2">
                             <img src={user?.photoURL} alt="User" />
                         </div>
                     </div>
@@ -21,7 +21,7 @@ const Profile = () => {
                         <h2 className="text-xl font-bold">Name: {user?.displayName}</h2>
                         <p>Email: {user?.email}</p>
                         {/* Add more profile information as needed */}
-                        <Link to="/updateProfile" className="btn btn-primary mt-4">Update Profile</Link>
+                        <Link to="/updateProfile" className="btn bg-green-500 mt-4">Update Profile</Link>
                     </div>
                 </div>
             </div>

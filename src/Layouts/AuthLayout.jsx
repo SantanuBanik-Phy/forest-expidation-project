@@ -10,6 +10,7 @@ const AuthLayout = () => {
             <header className='bg-slate-900 mb-12 py-4 '>
                 <Navbar></Navbar>
             </header>
+          
             <Outlet></Outlet>
 
             <Footer></Footer>

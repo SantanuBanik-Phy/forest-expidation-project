@@ -28,7 +28,7 @@ const UpdateProfile = () => {
                     <form onSubmit={handleUpdateProfile}>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Name</span>
+                                <span className="label-text font-bold">Name</span>
                             </label>
                             <input
                                 type="text"
@@ -41,7 +41,7 @@ const UpdateProfile = () => {
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Photo URL</span>
+                                <span className="label-text font-bold">Photo URL</span>
                             </label>
                             <input
                                 type="text"
@@ -54,7 +54,7 @@ const UpdateProfile = () => {
                         </div>
                         {error && <p className="text-red-500 mt-2">{error}</p>}
                         <div className="form-control mt-6">
-                            <button type="submit" className="btn bg-green-500">
+                            <button type="submit" className="btn bg-green-500 text-white">
                                 Update Information
                             </button>
                         </div>

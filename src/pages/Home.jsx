@@ -25,10 +25,11 @@ const Home = () => {
         </div>
       </section>
       <section>
-        <SpecialDeals specialDealsData={specialDealsData}></SpecialDeals>
+      <Feedback feedBackData={feedBackData}></Feedback>
+        
       </section>
       <section>
-        <Feedback feedBackData={feedBackData}></Feedback>
+      <SpecialDeals specialDealsData={specialDealsData}></SpecialDeals>
       </section>
      
 
