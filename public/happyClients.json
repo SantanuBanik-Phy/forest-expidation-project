@@ -1,0 +1,57 @@
+[
+    {
+      "reviewId": 1,
+      "name": "Sophia Martinez",
+      "userImg": "https://example.com/images/sophia.jpg",
+      "review": "The rainforest trek was absolutely stunning! I felt immersed in nature and learned so much about the ecosystem. The guides were amazing and knowledgeable.",
+      "rating": 5,
+      "date": "2024-11-10",
+      "location": "Seattle, WA, USA"
+    },
+    {
+      "reviewId": 2,
+      "name": "Liam Chen",
+      "userImg": "https://example.com/images/liam.jpg",
+      "review": "The coral reef snorkeling adventure was breathtaking. Seeing the vibrant marine life up close was an unforgettable experience. Highly recommend!",
+      "rating": 4.8,
+      "date": "2024-10-22",
+      "location": "San Diego, CA, USA"
+    },
+    {
+      "reviewId": 3,
+      "name": "Aisha Ahmed",
+      "userImg": "https://example.com/images/aisha.jpg",
+      "review": "The eco-safari exceeded my expectations! It was thrilling to see wildlife in their natural habitat while being mindful of conservation efforts.",
+      "rating": 5,
+      "date": "2024-09-15",
+      "location": "London, UK"
+    },
+    {
+      "reviewId": 4,
+      "name": "David Lee",
+      "userImg": "https://example.com/images/david.jpg",
+      "review": "Kayaking through the mangroves was such a peaceful experience. The team was professional and ensured we had a memorable time.",
+      "rating": 4.7,
+      "date": "2024-08-05",
+      "location": "Sydney, Australia"
+    },
+    {
+      "reviewId": 5,
+      "name": "Emma Thompson",
+      "userImg": "https://example.com/images/emma.jpg",
+      "review": "The guided mountain hike was a perfect mix of adventure and education. The views were breathtaking, and the guides were fantastic.",
+      "rating": 4.9,
+      "date": "2024-07-22",
+      "location": "Edinburgh, Scotland"
+    },
+    {
+      "reviewId": 6,
+      "name": "Michael Johnson",
+      "userImg": "https://example.com/images/michael.jpg",
+      "review": "The night safari was magical! Spotting nocturnal wildlife in their natural habitat was an unforgettable experience.",
+      "rating": 5,
+      "date": "2024-06-18",
+      "location": "Cape Town, South Africa"
+    }
+  ]
+  

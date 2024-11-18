@@ -2,14 +2,14 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const AdventureCard = ({ adventure }) => {
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
 
-//   const handleExploreNow = () => {
-//     navigate(`/adventure/${adventure.id}`);
-//   };
+  const handleExploreNow = () => {
+    navigate(`/adventure/${adventure.id}`);
+  };
 
   return (
-    <div className="p-4 border rounded-lg shadow-md hover:shadow-lg transition-shadow">
+    <div className=" p-6 border rounded-lg shadow-md hover:shadow-lg transition-shadow">
       <img
         src={adventure.image}
         alt={adventure.title}
@@ -25,6 +25,7 @@ const AdventureCard = ({ adventure }) => {
           ))}
         </ul>
         <button
+        onClick={handleExploreNow}
          
           className="mt-4 bg-green-500 btn text-white btn-sm rounded-full px-4 py-2 "
         >

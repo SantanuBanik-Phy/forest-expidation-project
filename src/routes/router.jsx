@@ -8,6 +8,7 @@ import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import Home from "../pages/Home";
+import AdventureDetails from "../components/AdventureDetails";
 // import HomeLayout from "../layouts/HomeLayout";
 // import CategoryNews from "../pages/CategoryNews";
 // import AuthLayout from "../layouts/AuthLayout";
@@ -27,18 +28,24 @@ import Home from "../pages/Home";
           loader:async ()=> {
             const adventureRes  = await fetch("/adventure.json");
             const adventureData = await adventureRes.json()
+            const feedBackRes = await fetch("/happyClients.json")
+            const feedBackData = await feedBackRes.json()
+            const specialDealsRes = await fetch("/specialDeals.json")
+            const specialDealsData = await  specialDealsRes.json()
 
-            return adventureData
+            return {adventureData, feedBackData, specialDealsData}
         }
         },
-        // {
-        //   path: "/category/:id",
-        //   element: <CategoryNews></CategoryNews>,
-        //   loader: ({ params }) =>
-        //     fetch(
-        //       `https://openapi.programming-hero.com/api/news/category/${params.id}`
-        //     ),
-        // },
+        {
+          path: "/adventure/:id",
+          element: <AdventureDetails></AdventureDetails>,
+          loader:async({params})=>{
+            const res =await fetch("/adventure.json")
+            const data = await res.json()
+            const singleData = data.find(d=>d.id == params.id)
+            return singleData
+        }
+        },
       ],
     },
     {
