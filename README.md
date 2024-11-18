@@ -32,7 +32,8 @@ This project is a web application built with React that showcases eco-friendly t
 *   `swiper`: For the image slider on the homepage.
 *   `react-router-dom`: For routing and navigation.
 *   `animate.css`: For animations on the homepage.
-*   `react-hook-form`: For form handling (optional).
+*   `toast`: use in login section for shown message if any error.
+*   `Carousel`: use in feedback section.
 *   `tailwindcss`: For styling and UI design.
 *   `daisyui`: For additional UI components and styling.
 

@@ -19,13 +19,16 @@ const Feedback = ({feedBackData}) => {
         {feedBackData.map((review) => (
           <div
             key={review.reviewId}
-            className="p-4 bg-gradient-to-r from-green-100 via-white to-blue-100 rounded-lg shadow-lg flex flex-col items-center"
+            className="p-4  bg-gradient-to-r from-green-100 via-white to-blue-100 rounded-lg shadow-lg flex flex-col items-center"
           >
+            <div className="w-20 h-20 rounded-full overflow-hidden mb-4">
             <img
               src={review.userImg}
               alt={review.name}
-              className="w-20 h-20 rounded-full mb-4"
+              className="w-full h-full object-cover"
             />
+            </div>
+            
             <h3 className="font-bold text-lg">{review.name}</h3>
             <p className="text-gray-500 text-sm">{review.location}</p>
             <p className="italic text-center mt-2">{review.review}</p>

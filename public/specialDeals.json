@@ -2,6 +2,7 @@
     {
       "dealId": 101,
       "title": "Rainforest Adventure Package",
+      "image":"https://i.ibb.co.com/n3ZR6qh/Rainforest-Adventures-Costa-Rica-Atlantic-aerial-tram.jpg",
       "description": "Immerse yourself in the lush rainforest with guided treks, eco-friendly accommodations, and educational sessions about local wildlife.",
       "price": 499.99,
       "discount": "20% off",
@@ -17,6 +18,7 @@
     {
       "dealId": 102,
       "title": "Underwater Explorer Package",
+      "image":"https://i.ibb.co.com/wCcJJyk/underwater-explorer.jpg",
       "description": "Discover vibrant coral reefs and marine life in this all-inclusive snorkeling adventure, guided by marine biologists.",
       "price": 349.99,
       "discount": "15% off",
@@ -32,6 +34,8 @@
     {
       "dealId": 103,
       "title": "Wildlife Safari Getaway",
+      "image":"https://i.ibb.co.com/LxBsYZD/goway-travel-africa-tanzania-serengeti-national-park.webp",
+      
       "description": "Embark on an eco-friendly safari to witness exotic wildlife and stunning landscapes, complete with luxury tent accommodations.",
       "price": 899.99,
       "discount": "25% off",
@@ -47,6 +51,7 @@
     {
       "dealId": 104,
       "title": "Kayaking Adventure",
+      "image":"https://i.ibb.co.com/WstvW8b/7RHri3.jpg",
       "description": "Paddle through serene mangroves and enjoy the beauty of untouched nature, led by expert guides.",
       "price": 199.99,
       "discount": "10% off",
@@ -62,6 +67,7 @@
     {
       "dealId": 105,
       "title": "Mountain Hiking Retreat",
+      "image":"https://i.ibb.co.com/h1gfWSD/Vipassana-hiking-retreat-switzerland.jpg",
       "description": "Experience breathtaking mountain views and reconnect with nature in this guided hiking and camping adventure.",
       "price": 399.99,
       "discount": "18% off",

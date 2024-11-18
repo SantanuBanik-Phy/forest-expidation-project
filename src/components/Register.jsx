@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import google from "../assets/google.png";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
@@ -10,6 +10,7 @@ const Register = () => {
     useContext(AuthContext);
   const navigate = useNavigate();
   const [passwordError, setPasswordError] = useState("");
+  const [emailError, setEmailError] = useState("");
 
   const handleRegister = async (event) => {
     event.preventDefault();
@@ -32,20 +33,30 @@ const Register = () => {
       return;
     }
     setPasswordError("");
+    setEmailError(""); // Clear email error before attempting registration
 
     try {
       const result = await createUser(email, password);
       await updateUserProfile({ displayName: name, photoURL: photo });
       setUser(result.user);
-      navigate("/");
 
       // Success toast
       toast.success("Registration successful!");
       navigate("/");
     } catch (error) {
       console.error(error);
-      // Error toast
-      toast.error(`Registration failed: ${error.message}`,);
+
+      // Firebase error handling
+      if (error.code === "auth/email-already-in-use") {
+        setEmailError("This email is already in use.");
+        toast.error("This email is already in use.");
+      } else if (error.code === "auth/invalid-email") {
+        setEmailError("Invalid email address.");
+        toast.error("Invalid email address.");
+      } 
+       else {
+        toast.error(`Registration failed: ${error.message}`);
+      }
     }
   };
 
@@ -59,13 +70,14 @@ const Register = () => {
       navigate("/");
     } catch (error) {
       console.error(error);
-      // Error toast
       toast.error(`Google Sign-In failed: ${error.message}`);
     }
   };
 
   return (
     <div className="min-h-screen bg-base-200">
+      <ToastContainer 
+     position="top-center" ></ToastContainer>
       <div className="flex flex-col justify-center items-center ">
         <div className="text-center mt-24 mb-10">
           <h1 className="md:text-5xl text-3xl font-bold">Register now!</h1>
@@ -86,7 +98,7 @@ const Register = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-bold ">Email</span>
+                <span className="label-text font-bold">Email</span>
               </label>
               <input
                 type="email"
@@ -95,6 +107,7 @@ const Register = () => {
                 className="input input-bordered"
                 required
               />
+              {emailError && <p className="text-red-500 text-sm">{emailError}</p>}
             </div>
             <div className="form-control">
               <label className="label">
@@ -119,8 +132,10 @@ const Register = () => {
                 className="input input-bordered"
                 required
               />
+              {passwordError && (
+                <p className="text-red-500 text-sm">{passwordError}</p>
+              )}
             </div>
-            {passwordError && <p className="text-red-500">{passwordError}</p>}
             <div className="form-control mt-6">
               <button type="submit" className="btn bg-green-500 text-white">
                 Register

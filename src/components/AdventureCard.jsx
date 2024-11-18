@@ -16,7 +16,7 @@ const AdventureCard = ({ adventure }) => {
         className="w-full h-48 object-cover rounded-lg"
       />
       <div className="mt-4">
-        <h3 className="text-lg font-bold">{adventure.title}</h3>
+        <h3 className="text-lg font-bold text-green-700">{adventure.title}</h3>
         <ul className="mt-2 text-sm text-gray-600">
           {adventure.ecoFriendlyFeatures.map((feature, index) => (
             <li key={index} className="list-disc ml-4">
@@ -27,7 +27,7 @@ const AdventureCard = ({ adventure }) => {
         <button
         onClick={handleExploreNow}
          
-          className="mt-4 bg-green-500 btn text-white btn-sm rounded-full px-4 py-2 "
+          className="mt-4 bg-gradient-to-r from-green-700 to-green-300 btn text-white rounded-xl px-4 py-2 "
         >
           Explore Now
         </button>
