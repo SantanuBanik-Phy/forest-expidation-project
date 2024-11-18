@@ -65,7 +65,7 @@ const Login = () => {
             error.signIn && <p className="text-red-600">{error.signIn}</p>
           }
                             <label className="label">
-                                <Link to="/forget-password" className="label-text-alt link link-hover" state={{ email: email }}>Forgot password?</Link>
+                                <Link to="/forgetPassword" className="label-text-alt link link-hover" state={{ email: email }}>Forgot password?</Link>
                             </label>
                         </div>
                         <div className="form-control mt-6">

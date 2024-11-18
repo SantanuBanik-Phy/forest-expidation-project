@@ -9,6 +9,7 @@ import Profile from "../components/Profile";
 import UpdateProfile from "../components/UpdateProfile";
 import PrivateRoute from "./PrivateRoute";
 import DynamicTitle from "../components/DynamicTitle";
+import ForgetPassword from "../components/ForgetPassword";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,14 @@ const router = createBrowserRouter([
           <PrivateRoute>
             <UpdateProfile />
           </PrivateRoute>
+        ),
+      },
+      {
+        path: "/forgetPassword",
+        element: (
+          
+            <ForgetPassword />
+       
         ),
       },
     ],

@@ -13,7 +13,7 @@ const UpdateProfile = () => {
         event.preventDefault();
         try {
             await updateUserProfile({ displayName: name, photoURL: photoURL });
-            navigate("/"); // Navigate to the home page on success
+            navigate("/Profile"); // Navigate to the home page on success
         } catch (error) {
             console.error("Failed to update profile:", error);
             setError("An error occurred while updating your profile. Please try again.");
