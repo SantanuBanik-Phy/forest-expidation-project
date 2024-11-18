@@ -1,8 +1,4 @@
-import {
-    Navigate,
-    createBrowserRouter,
-   
-  } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import HomeLayout from "../Layouts/HomeLayout";
 import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../components/Login";
@@ -12,77 +8,87 @@ import AdventureDetails from "../components/AdventureDetails";
 import Profile from "../components/Profile";
 import UpdateProfile from "../components/UpdateProfile";
 import PrivateRoute from "./PrivateRoute";
-// import HomeLayout from "../layouts/HomeLayout";
-// import CategoryNews from "../pages/CategoryNews";
-// import AuthLayout from "../layouts/AuthLayout";
-// import Login from "../pages/Login";
-// import Register from "../pages/Register";
-// import NewsDetails from "../pages/NewsDetails";
-// import PrivateRoute from "./PrivateRoute";
+import DynamicTitle from "../components/DynamicTitle";
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <HomeLayout></HomeLayout>,
-      children: [
-        {
-          path: "/",
-          element: <Home></Home>,
-          loader:async ()=> {
-            const adventureRes  = await fetch("/adventure.json");
-            const adventureData = await adventureRes.json()
-            const feedBackRes = await fetch("/happyClients.json")
-            const feedBackData = await feedBackRes.json()
-            const specialDealsRes = await fetch("/specialDeals.json")
-            const specialDealsData = await  specialDealsRes.json()
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <>
+        <DynamicTitle />
+        <HomeLayout />
+      </>
+    ),
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+        loader: async () => {
+          const adventureRes = await fetch("/adventure.json");
+          const adventureData = await adventureRes.json();
+          const feedBackRes = await fetch("/happyClients.json");
+          const feedBackData = await feedBackRes.json();
+          const specialDealsRes = await fetch("/specialDeals.json");
+          const specialDealsData = await specialDealsRes.json();
 
-            return {adventureData, feedBackData, specialDealsData}
-        }
+          return { adventureData, feedBackData, specialDealsData };
         },
-        {
-          path: "/adventure/:id",
-          element: <PrivateRoute><AdventureDetails></AdventureDetails></PrivateRoute>,
-          loader:async({params})=>{
-            const res =await fetch("/adventure.json")
-            const data = await res.json()
-            const singleData = data.find(d=>d.id == params.id)
-            return singleData
-        }
-        },
-        {
-          path: "/Profile",
-          element: <PrivateRoute><Profile /></PrivateRoute>
       },
       {
-          path: "/updateProfile",
-          element: <PrivateRoute><UpdateProfile /> </PrivateRoute>  
-
+        path: "/adventure/:id",
+        element: (
+          <PrivateRoute>
+            <AdventureDetails />
+          </PrivateRoute>
+        ),
+        loader: async ({ params }) => {
+          const res = await fetch("/adventure.json");
+          const data = await res.json();
+          const singleData = data.find((d) => d.id == params.id);
+          return singleData;
+        },
       },
-      ],
-    },
-    {
-        path: "auth",
-      element: <AuthLayout></AuthLayout>,
-      children: [
-        {
-          path: "/auth/login",
-          element: <Login></Login>,
-        },
-        {
-          path: "/auth/register",
-          element:<Register></Register>,
-          
-        },
-      ],
+      {
+        path: "/Profile",
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/updateProfile",
+        element: (
+          <PrivateRoute>
+            <UpdateProfile />
+          </PrivateRoute>
+        ),
+      },
+    ],
+  },
+  {
+    path: "auth",
+    element: (
+      <>
+        <DynamicTitle />
+        <AuthLayout />
+      </>
+    ),
+    children: [
+      {
+        path: "/auth/login",
+        element: <Login />,
+      },
+      {
+        path: "/auth/register",
+        element: <Register />,
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <div>Page not found</div>,
+  },
+]);
 
-    },
-    
-    
-
-  
-    {
-        path: "*",
-      element: <div>Page not found</div>,
-    }
-  ]);
-  export default router;
+export default router;

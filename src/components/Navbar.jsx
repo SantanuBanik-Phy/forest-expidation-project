@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import "./Navbar.css";
+import logo from "../assets/sign.png"
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
@@ -18,9 +19,10 @@ const Navbar = () => {
     <div className="w-11/12 mx-auto">
       <div className="md:navbar flex md:flex-row justify-center items-center flex-col text-white ">
       <div className="md:navbar-start">
+        <img src={logo} className="w-10 h-10" alt="" />
         <Link to="/" className="btn btn-ghost normal-case text-xl">
           Eco-Adventure
-        </Link>
+        </Link> 
       </div>
       <div className="md:navbar-center lg:flex">
         <ul className="menu menu-horizontal px-2 space-x-8 text-lg">

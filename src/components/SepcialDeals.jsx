@@ -14,7 +14,7 @@ const SpecialDeals = ({ specialDealsData }) => {
   };
 
   return (
-    <section className="py-12 bg-gradient-to-r from-green-100 via-white to-blue-100">
+    <section className="py-12 ">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">
           Special Deals

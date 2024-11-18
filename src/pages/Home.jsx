@@ -5,6 +5,7 @@ import AdventureCard from '../components/AdventureCard.jsx';
 import Feedback from '../components/FeedBack.jsx';
 import SpecialDeals from '../components/SepcialDeals.jsx';
 import { useLoaderData } from 'react-router-dom';
+import 'animate.css';
 
 
 
@@ -17,8 +18,8 @@ const Home = () => {
         <div>
          <Banner></Banner>
          <section className="w-11/12 mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-6 mt-8">Adventure Experiences</h2>
-        <div className="grid md:grid-cols-3 gap-6 ">
+        <h2 className="text-4xl font-bold text-center mb-10 mt-12 animate__animated  animate__fadeInRightBig">Adventure Experiences</h2>
+        <div className="grid md:grid-cols-3 gap-6  mb-8">
           {adventureData.map((adventure) => (
             <AdventureCard key={adventure.id} adventure={adventure} />
           ))}

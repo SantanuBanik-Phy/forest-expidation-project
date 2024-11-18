@@ -1,3 +1,4 @@
+import logo from "../assets/sign.png"
 const Footer = () => {
     const currentYear = new Date().getFullYear();
 
@@ -6,7 +7,7 @@ const Footer = () => {
             {/* Logo and Company Name */}
             <div className="text-center mb-6">
                 <img
-                    src="/path-to-your-logo.png"
+                    src={logo}
                     alt="Company Logo"
                     className="w-16 h-16 mx-auto"
                 />

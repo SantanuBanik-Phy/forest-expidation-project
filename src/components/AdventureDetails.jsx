@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import {  useNavigate, useLoaderData } from "react-router-dom";
-import Swal from 'sweetalert2'
+
 import Modal from "./Modal";
-// Assuming JSON data is stored in a separate file.
-// import { DynamicTitle } from "../utils/DynamicTitle";
+
 
 const AdventureDetails = () => {
 //   const { id } = useParams();
    const adventure = useLoaderData(); 
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
+  useEffect(() => {
+    document.title = adventure.id ? ` ${adventure.title} - Eco-Adventure` : "Adventure Details - Eco-Adventure ";
+  }, [adventure]);
     
 
   useEffect(() => {
