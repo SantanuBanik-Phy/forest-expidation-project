@@ -2,7 +2,7 @@
     {
       "id": 1,
       "title": "Mountain Trekking Adventure",
-      "image": "https://via.placeholder.com/600x400?text=Mountain+Trek",
+      "image": "https://i.ibb.co.com/tLjS27s/tourist-with-backpack-is-seen-trekking-mountain-digital-art-illustration-generative-ai-442940-6713.jpg",
       "category": "Mountain",
       "shortDescription": "Embark on a thrilling trek through the scenic mountains.",
       "cost": 150,
@@ -18,7 +18,7 @@
     {
       "id": 2,
       "title": "Ocean Diving Expedition",
-      "image": "https://via.placeholder.com/600x400?text=Ocean+Dive",
+      "image": "https://i.ibb.co.com/dfDj4yL/ocean-depth-scuba-diver-explores-remains-ancient-ship-now-submerged-vessel-dive-expedition-1289822-8.jpg",
       "category": "Ocean",
       "shortDescription": "Discover the wonders of underwater ecosystems.",
       "cost": 200,
@@ -34,7 +34,7 @@
     {
       "id": 3,
       "title": "Jungle Safari Adventure",
-      "image": "https://via.placeholder.com/600x400?text=Jungle+Safari",
+      "image": "https://i.ibb.co.com/5vLZ1Hx/jungle-safari-adventure-stockcake.jpg",
       "category": "Jungle",
       "shortDescription": "Explore dense forests and discover exotic wildlife.",
       "cost": 120,
@@ -50,7 +50,7 @@
     {
       "id": 4,
       "title": "Desert Camel Ride",
-      "image": "https://via.placeholder.com/600x400?text=Desert+Camel+Ride",
+      "image": "https://i.ibb.co.com/YydzhDp/full-day-guided-safari-desert-tour-in-dubai-with-camel-ride.webp",
       "category": "Desert",
       "shortDescription": "Experience the vastness of desert landscapes on camelback.",
       "cost": 100,
@@ -66,7 +66,7 @@
     {
       "id": 5,
       "title": "Glacier Hiking Adventure",
-      "image": "https://via.placeholder.com/600x400?text=Glacier+Hike",
+      "image": "https://i.ibb.co.com/7GPGL5t/Ice-CAve-13-scaled.webp",
       "category": "Glacier",
       "shortDescription": "Hike on magnificent glaciers with expert guides.",
       "cost": 180,
@@ -82,7 +82,7 @@
     {
       "id": 6,
       "title": "Volcano Exploration",
-      "image": "https://via.placeholder.com/600x400?text=Volcano+Exploration",
+      "image": "https://i.ibb.co.com/bLMTgrv/Are-There-Live-Volcanoes-of-Costa-Rica.webp",
       "category": "Volcano",
       "shortDescription": "Get up close with active and dormant volcanoes.",
       "cost": 250,
@@ -98,7 +98,7 @@
     {
       "id": 7,
       "title": "Canyon Rafting Adventure",
-      "image": "https://via.placeholder.com/600x400?text=Canyon+Rafting",
+      "image": "https://i.ibb.co.com/s67hH1W/Getty-Images-583647930-cropped.jpg",
       "category": "Canyon",
       "shortDescription": "Thrill yourself with rafting through steep canyons.",
       "cost": 220,
@@ -114,7 +114,7 @@
     {
       "id": 8,
       "title": "Wildlife Photography Tour",
-      "image": "https://via.placeholder.com/600x400?text=Wildlife+Photography",
+      "image": "https://i.ibb.co.com/5KTKtrd/Taos-wildlife-photography-tours-1024x585.jpg",
       "category": "Wildlife",
       "shortDescription": "Capture stunning wildlife moments on camera.",
       "cost": 300,
@@ -130,7 +130,7 @@
     {
       "id": 9,
       "title": "Northern Lights Expedition",
-      "image": "https://via.placeholder.com/600x400?text=Northern+Lights",
+      "image": "https://i.ibb.co.com/D9V3ckS/northern-lights-expedition-hiking-aurora-lapland-s-snowy-wonderland-977242-847.jpg",
       "category": "Aurora",
       "shortDescription": "Witness the magic of the Northern Lights.",
       "cost": 400,
