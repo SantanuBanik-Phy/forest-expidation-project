@@ -21,7 +21,7 @@ const Profile = () => {
                         <h2 className="text-xl font-bold">Name: {user?.displayName}</h2>
                         <p>Email: {user?.email}</p>
                         {/* Add more profile information as needed */}
-                        <Link to="/update-profile" className="btn btn-primary mt-4">Update Profile</Link>
+                        <Link to="/updateProfile" className="btn btn-primary mt-4">Update Profile</Link>
                     </div>
                 </div>
             </div>

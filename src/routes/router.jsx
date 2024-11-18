@@ -9,6 +9,8 @@ import Login from "../components/Login";
 import Register from "../components/Register";
 import Home from "../pages/Home";
 import AdventureDetails from "../components/AdventureDetails";
+import Profile from "../components/Profile";
+import UpdateProfile from "../components/UpdateProfile";
 // import HomeLayout from "../layouts/HomeLayout";
 // import CategoryNews from "../pages/CategoryNews";
 // import AuthLayout from "../layouts/AuthLayout";
@@ -46,6 +48,15 @@ import AdventureDetails from "../components/AdventureDetails";
             return singleData
         }
         },
+        {
+          path: "/Profile",
+          element: <Profile />
+      },
+      {
+          path: "/updateProfile",
+          element: <UpdateProfile />   
+
+      },
       ],
     },
     {

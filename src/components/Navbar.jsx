@@ -1,18 +1,26 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
 
+  // Keep local state for tooltip display name
+  const [displayName, setDisplayName] = useState(user?.displayName || "");
+
+  // Update the local state when the user object changes
+  useEffect(() => {
+    setDisplayName(user?.displayName || "");
+  }, [user]);
+
   return (
-    <div className="navbar bg-base-100">
-      <div className="navbar-start">
+    <div className="md:navbar flex md:flex-row justify-center items-center flex-col bg-base-100">
+      <div className="md:navbar-start">
         <Link to="/" className="btn btn-ghost normal-case text-xl">
           Eco-Adventure
         </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="md:navbar-center lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
             <Link to="/">Home</Link>
@@ -22,16 +30,21 @@ const Navbar = () => {
               <Link to="/updateProfile">Update Profile</Link>
             </li>
           )}
+          {user && (
+            <li>
+              <Link to="/Profile">Profile</Link>
+            </li>
+          )}
         </ul>
       </div>
-      <div className="login flex gap-2 items-center navbar-end">
+      <div className="login flex gap-2 items-center md:navbar-end">
         <div className="relative group">
           {user && user?.email ? (
-            <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+            <div className="tooltip tooltip-bottom" data-tip={displayName}>
               <img
                 src={user?.photoURL}
-                className="w-10 h-10 rounded-full cursor-pointer"
-                alt=""
+                className="w-10 h-10 mt-2 rounded-full cursor-pointer"
+                alt="User"
               />
             </div>
           ) : (

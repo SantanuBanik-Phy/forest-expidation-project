@@ -32,9 +32,21 @@ const AuthProvider = ({ children }) => {
         return signOut(auth);
     };
 
-    const updateUserProfile = (updatedData) => {
-        return updateProfile(auth.currentUser,updatedData)
-    }
+    const updateUserProfile = async (updatedData) => {
+        try {
+            await updateProfile(auth.currentUser, updatedData);
+            // Update the user state after successfully updating the profile
+            setUser({
+                ...auth.currentUser, 
+                displayName: updatedData.displayName, 
+                photoURL: updatedData.photoURL, 
+            });
+        } catch (error) {
+            console.error("Error updating profile:", error);
+            throw error; 
+        }
+    };
+    
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
