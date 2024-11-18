@@ -1,89 +1,152 @@
-import React, { useContext, useState } from 'react';
-import { AuthContext } from '../provider/AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
+import google from "../assets/google.png";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
-    const { createUser,setUser,updateUserProfile} = useContext(AuthContext)
-    const navigate = useNavigate();
-    const [error, setError] = useState({})
-    const handleRegister = e => {
-        e.preventDefault();
-      
-        const form = new FormData(e.target
+  const { createUser, googleSignIn, setUser, updateUserProfile } =
+    useContext(AuthContext);
+  const navigate = useNavigate();
+  const [passwordError, setPasswordError] = useState("");
 
-        );
+  const handleRegister = async (event) => {
+    event.preventDefault();
 
-        const name = form.get('name');
-        if (name.length < 5) {
-            setError({...error, name: 'Name must be at least 5 characters long' })
-            return
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const photo = form.photo.value;
+    const password = form.password.value;
 
-        }
-        const photo = form.get('photo');
-        const email = form.get('email');
-        const password = form.get('password');
-        // console.log(name, photo, email, password);
-                // create user
-                createUser(email, password)
-                .then(result => {
-                    setUser(result.user)
-                    updateUserProfile({displayName: name ,photoURL: photo})
-                    then(() =>{
-                        navigate('/');
-                    })
-                })
-                .catch(error => {
-                    console.error(error)
-                })
+    // Password validation
+    if (!/(?=.*[A-Z])/.test(password)) {
+      setPasswordError("Password must contain at least one uppercase letter.");
+      return;
+    } else if (!/(?=.*[a-z])/.test(password)) {
+      setPasswordError("Password must contain at least one lowercase letter.");
+      return;
+    } else if (password.length < 6) {
+      setPasswordError("Password must be at least 6 characters long.");
+      return;
     }
-    return (
-        <div className='min-h-screen flex justify-center items-center'>
+    setPasswordError("");
 
-               <div className="card bg-base-100 w-full max-w-lg shrink-0 shadow-2xl p-8">
-                <h1 className='text-center font-bold text-2xl'>Register Account</h1>
-      <form onSubmit={handleRegister} className="card-body">
-      <div className="form-control">
-          <label className="label">
-            <span className="label-text">Your Name</span>
-          </label>
-          <input type="text" name='name' placeholder="Enter your name" className="input input-bordered" required />
-          {
-            error.name && <p className="text-red-500">{error.name}</p>
-          }
-        </div>
+    try {
+      const result = await createUser(email, password);
+      await updateUserProfile({ displayName: name, photoURL: photo });
+      setUser(result.user);
+      navigate("/");
 
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Photo URL</span>
-          </label>
-          <input type="text" name='photo' placeholder="Your photo url" className="input input-bordered" required />
-        </div>
+      // Success toast
+      toast.success("Registration successful!");
+      navigate("/");
+    } catch (error) {
+      console.error(error);
+      // Error toast
+      toast.error(`Registration failed: ${error.message}`,);
+    }
+  };
 
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Email</span>
-          </label>
-          <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+  const handleGoogleSignIn = async () => {
+    try {
+      const result = await googleSignIn();
+      setUser(result.user);
+
+      // Success toast
+      toast.success("Successfully signed in with Google!");
+      navigate("/");
+    } catch (error) {
+      console.error(error);
+      // Error toast
+      toast.error(`Google Sign-In failed: ${error.message}`);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-base-200">
+      <div className="flex flex-col justify-center items-center ">
+        <div className="text-center mt-24 mb-10">
+          <h1 className="md:text-5xl text-3xl font-bold">Register now!</h1>
         </div>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Password</span>
-          </label>
-          <input type="password" name='password' placeholder="password" className="input input-bordered" required />
-          <label className="label">
-            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-          </label>
+        <div className="card w-full md:max-w-xl max-w-sm shadow-2xl bg-base-100">
+          <form onSubmit={handleRegister} className="card-body">
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text font-bold">Name</span>
+              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="name"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text font-bold ">Email</span>
+              </label>
+              <input
+                type="email"
+                name="email"
+                placeholder="email"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text font-bold">Photo URL</span>
+              </label>
+              <input
+                type="text"
+                name="photo"
+                placeholder="photo URL"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text font-bold">Password</span>
+              </label>
+              <input
+                type="password"
+                name="password"
+                placeholder="password"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            {passwordError && <p className="text-red-500">{passwordError}</p>}
+            <div className="form-control mt-6">
+              <button type="submit" className="btn bg-green-500 text-white">
+                Register
+              </button>
+            </div>
+            <div className="divider">OR</div>
+            <button
+              onClick={handleGoogleSignIn}
+              className="btn btn-outline btn-accent"
+            >
+              <img src={google} className="w-5 h-5" alt="" />
+              Continue with Google
+            </button>
+            <label className="label">
+              <p className="text-center mt-4">
+                Already have an Account?{" "}
+                <Link className="text-blue-600 font-bold" to="/auth/login">
+                  Log in
+                </Link>
+              </p>
+            </label>
+          </form>
         </div>
-        <div className="form-control mt-6">
-          <button className="btn text-white bg-[#403F3F]">Register</button>
-        </div>
-      </form>
-     
+      </div>
     </div>
-            
-            
-             </div>
-    );
+  );
 };
 
 export default Register;
