@@ -15,7 +15,7 @@ const HomeLayout = () => {
               <ToastContainer ></ToastContainer>
       
      
-      <nav className="w-11/12 mx-auto py-2">
+      <nav className="bg-slate-900 mb-12 py-4">
         <Navbar></Navbar>
       </nav>
       
