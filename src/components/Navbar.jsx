@@ -7,10 +7,10 @@ import logo from "../assets/sign.png"
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
 
-  // Keep local state for tooltip display name
+
   const [displayName, setDisplayName] = useState(user?.displayName || "");
 
-  // Update the local state when the user object changes
+
   useEffect(() => {
     setDisplayName(user?.displayName || "");
   }, [user]);
