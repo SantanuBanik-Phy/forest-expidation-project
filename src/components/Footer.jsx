@@ -16,11 +16,10 @@ const Footer = () => {
                             className="w-16 h-16 mx-auto lg:mx-0"
                         />
                         <h1 className="text-2xl font-bold text-center lg:text-left">
-                            Eco-Adventure
+                        Forest Expeditions
                         </h1>
                         <p className="text-sm text-gray-300 text-center lg:text-left">
-                            A small river named Duden flows by their place and
-                            supplies it with the necessary regelialia.
+                        Forest Expeditions Co. provides eco-friendly forest adventures, blending immersive experiences with sustainability.
                         </p>
                         {/* Social Media Icons */}
                         <div className="flex justify-center lg:justify-start gap-4 mt-4">
@@ -280,7 +279,7 @@ data-tip="GitHub"
                                 >
                                     <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z" />
                                 </svg>
-                                info@yourdomain.com
+                                info@ecoadventure.com
                             </li>
                         </ul>
                     </div>

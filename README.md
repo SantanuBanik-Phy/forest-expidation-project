@@ -1,8 +1,9 @@
-# Eco-Adventure Experiences
+# Forest Expeditions
 
-This project is a web application built with React that showcases eco-friendly travel adventures, like mountain treks or ocean dives. It provides detailed information on various eco-adventure options, allowing users to browse, learn more about each experience, and consult experts if they're interested.
 
-**Live URL:** [Insert your live URL here]
+Forest Expeditions is an eco-adventure platform offering curated forest exploration experiences. Discover nature responsibly with our sustainable and immersive adventures.
+
+**Live URL:** [https://confused-support.surge.sh/](https://confused-support.surge.sh/)
 
 ## Key Features
 
