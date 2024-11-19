@@ -3,7 +3,7 @@ import Banner from '../components/Banner.jsx';
 
 import AdventureCard from '../components/AdventureCard.jsx';
 import Feedback from '../components/FeedBack.jsx';
-import SpecialDeals from '../components/SepcialDeals.jsx';
+
 import { useLoaderData } from 'react-router-dom';
 import 'animate.css';
 import OurAgents from '../components/OurAgents.jsx';

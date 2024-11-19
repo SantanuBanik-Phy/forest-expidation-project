@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 
 const SpecialDeals = ({ specialDealsData }) => {
-  const [visibleCount, setVisibleCount] = useState(3); /
-  const [expanded, setExpanded] = useState(false); 
+  const [visibleCount, setVisibleCount] = useState(3); // Number of deals to show initially
+  const [expanded, setExpanded] = useState(false); // Track if expanded or not
 
   const handleToggle = () => {
     if (expanded) {
       setVisibleCount(3); // Reset to initial number of deals
     } else {
-      setVisibleCount(specialDealsData.length); 
+      setVisibleCount(specialDealsData.length); // Show all deals
     }
-    setExpanded(!expanded); 
+    setExpanded(!expanded); // Toggle expanded state
   };
 
   return (
