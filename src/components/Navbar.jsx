@@ -20,12 +20,12 @@ const Navbar = () => {
       <div className="md:navbar flex md:flex-row justify-center items-center flex-col text-white ">
       <div className="md:navbar-start flex flex-col md:flex-row justify-center items-center ">
         <img src={logo} className="w-10 h-10" alt="" />
-        <Link to="/" className="btn btn-ghost normal-case text-xl">
+        <Link to="/" className="btn btn-ghost normal-case text-2xl">
          Forest Expeditions
         </Link> 
       </div>
       <div className="md:navbar-center lg:flex">
-        <ul className="menu menu-horizontal px-2 space-x-8 mb-4 text-lg">
+        <ul className="menu menu-horizontal  md:space-x-8 space-x-3 mb-4 text-lg">
           
             <NavLink to="/" >Home</NavLink>
           
@@ -59,14 +59,14 @@ const Navbar = () => {
         {user && user?.email ? (
           <button
             onClick={logout}
-            className="btn bg-green-500 hover:bg-green-600 text-white rounded-xl"
+            className="btn bg-green-500  hover:bg-green-600 text-white rounded-full"
           >
             Log out
           </button>
         ) : (
           <Link
             to="/auth/login"
-            className="btn  bg-green-500 hover:bg-green-600 text-white rounded-xl"
+            className="btn  bg-green-500 hover:bg-green-600 text-white rounded-full"
           >
             Login
           </Link>

@@ -41,7 +41,7 @@ const consultantsData = [
     id: 4,
     name: "Santanu",
     description: "Experienced in extreme sports and adrenaline-packed adventures, including skydiving.",
-    image: "https://i.ibb.co.com/85kwZWK/istockphoto-149452771-612x612.jpg",
+    image: "https://i.ibb.co.com/Qpgk5zP/handsome-young-business-man-holding-document-folder-220507-700.jpg",
     socials: {
       twitter: "https://twitter.com/johndoe",
       facebook: "https://facebook.com/johndoe",
@@ -69,7 +69,7 @@ const OurAgents = () => {
             <img
               src={agent.image}
               alt={agent.name}
-              className="w-full h-56 object-cover"
+              className="w-full md:h-60  h-64 object-cover"
             />
             {/* Agent Info */}
             <div className="bg-green-500 text-white p-4">
