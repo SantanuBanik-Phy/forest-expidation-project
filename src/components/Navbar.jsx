@@ -18,14 +18,14 @@ const Navbar = () => {
   return (
     <div className="w-11/12 mx-auto">
       <div className="md:navbar flex md:flex-row justify-center items-center flex-col text-white ">
-      <div className="md:navbar-start">
+      <div className="md:navbar-start flex flex-col md:flex-row justify-center items-center ">
         <img src={logo} className="w-10 h-10" alt="" />
         <Link to="/" className="btn btn-ghost normal-case text-xl">
-          Eco-Adventure
+         Forest Expeditions
         </Link> 
       </div>
       <div className="md:navbar-center lg:flex">
-        <ul className="menu menu-horizontal px-2 space-x-8 text-lg">
+        <ul className="menu menu-horizontal px-2 space-x-8 mb-4 text-lg">
           
             <NavLink to="/" >Home</NavLink>
           
@@ -36,7 +36,8 @@ const Navbar = () => {
          
           
             
-              <NavLink to="/Profile">Profile</NavLink>
+              <NavLink to="/Profile">My Profile</NavLink>
+              <NavLink to="/aboutUs">About Us</NavLink>
            
         
         </ul>

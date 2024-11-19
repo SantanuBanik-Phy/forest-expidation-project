@@ -75,11 +75,11 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen bg-base-200">
+    <div className="min-h-screen bg-base-200 mb-20">
       <ToastContainer 
      position="top-center" ></ToastContainer>
       <div className="flex flex-col justify-center items-center ">
-        <div className="text-center mt-24 mb-10">
+        <div className="text-center mt-10 mb-10">
           <h1 className="md:text-5xl text-3xl font-bold">Register now!</h1>
         </div>
         <div className="card w-full md:max-w-xl max-w-sm shadow-2xl bg-base-100">

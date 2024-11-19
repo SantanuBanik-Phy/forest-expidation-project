@@ -48,7 +48,7 @@ const Login = () => {
     <div className="min-h-screen bg-base-200">
         <ToastContainer position="top-center" ></ToastContainer>
       <div className="flex flex-col justify-center items-center ">
-        <div className="text-center mt-20 mb-10">
+        <div className="text-center mt-10 mb-10">
           <h1 className="text-5xl font-bold">Login now!</h1>
         </div>
         <div className="card w-full max-w-xl shadow-2xl bg-base-100">

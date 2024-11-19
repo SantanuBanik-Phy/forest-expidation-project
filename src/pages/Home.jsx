@@ -6,6 +6,8 @@ import Feedback from '../components/FeedBack.jsx';
 import SpecialDeals from '../components/SepcialDeals.jsx';
 import { useLoaderData } from 'react-router-dom';
 import 'animate.css';
+import OurAgents from '../components/OurAgents.jsx';
+import Blog from '../components/Blog.jsx';
 
 
 
@@ -29,9 +31,16 @@ const Home = () => {
       <Feedback feedBackData={feedBackData}></Feedback>
         
       </section>
-      <section>
-      <SpecialDeals specialDealsData={specialDealsData}></SpecialDeals>
+      <section className='w-11/12 mx-auto'>
+      <OurAgents></OurAgents>
       </section>
+      {/* <section className='w-11/12 mx-auto'>
+      <SpecialDeals specialDealsData={specialDealsData}></SpecialDeals>
+      </section> */}
+      <section className='w-11/12 mx-auto'>
+      <Blog></Blog>
+      </section>
+      
      
 
         </div>

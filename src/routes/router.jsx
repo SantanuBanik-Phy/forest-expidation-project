@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import DynamicTitle from "../components/DynamicTitle";
 import ForgetPassword from "../components/ForgetPassword";
 import ErrorPage from "../pages/ErrorPage";
+import AboutUs from "../pages/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -74,6 +75,15 @@ const router = createBrowserRouter([
        
         ),
       },
+      {
+        path: "/aboutUs",
+        element: (
+          
+            <AboutUs />
+       
+        ),
+      },
+      
     ],
   },
   {

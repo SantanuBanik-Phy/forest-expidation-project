@@ -9,17 +9,21 @@ const DynamicTitle = () => {
 
     
     const titles = {
-      "/": "Home - Eco-Adventure ",
-      "/auth/login": "Login - Eco-Adventure ",
-      "/auth/register": "Register - Eco-Adventure ",
-      "/Profile": "My Profile - Eco-Adventure",
-      "/updateProfile": "Update Profile - Eco-Adventure ",
-      "//adventure/:id": "Adventure Experiences - Eco-Adventure",
-      "/404": "Page Not Found - Eco-Adventure ",
+      "/": "Home - Forest Expeditions ",
+      "/auth/login": "Login -Forest Expeditions ",
+      "/auth/register": "Register -Forest Expeditions ",
+      "/Profile": "My Profile -Forest Expeditions",
+      "/updateProfile": "Update Profile - Forest Expeditions ",
+      "//adventure": "Adventure Experiences - Forest Expeditions",
+      "/404": "Page Not Found -Forest Expeditions ",
+      "/aboutUs": "About Us - Forest Expeditions",
+      "/forgetPassword": "Forget Password - Forest Expeditions",
+
+      
     };
 
     
-    const defaultTitle = "Eco-Adventure";
+    const defaultTitle = "Forest Expeditions";
 
    
     document.title = titles[pathname] || defaultTitle;
