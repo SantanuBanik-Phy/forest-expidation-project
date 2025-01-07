@@ -1,5 +1,5 @@
 <div align="center">
-  <img height="200" src=""  />
+  <img height="200" src="https://raw.githubusercontent.com/SantanuBanik-Phy/forest-expidation-project/refs/heads/main/src/assets/forest-exp.png"  />
 </div>
 
 # 🌲 Forest Expeditions
